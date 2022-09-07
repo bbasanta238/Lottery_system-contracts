@@ -15,7 +15,7 @@ describe("Lottery issuer", () => {
 			await deployedContract.connect(add1).getContractBalance()
 		);
 		console.log(
-			await deployedContract.connect(add2).applyLottery({ value: 999 })
+			await deployedContract.connect(add2).applyLottery(101, { value: 999 })
 		);
 		console.log(
 			"contractbalance new",
@@ -26,15 +26,15 @@ describe("Lottery issuer", () => {
 
 	it("should revert transaction if owner apply for lottery", async () => {
 		await expect(
-			deployedContract.connect(add1).applyLottery({ value: 999 })
+			deployedContract.connect(add1).applyLottery(101, { value: 999 })
 		).to.be.revertedWith("Owner can't participate");
 	});
 	it("should revert transaction if paid value is less or greater than lottery price", async () => {
 		await expect(
-			deployedContract.connect(add2).applyLottery({ value: 929 })
+			deployedContract.connect(add2).applyLottery(101, { value: 929 })
 		).to.be.revertedWith("paid balance is greater or less than lottery price");
 		await expect(
-			deployedContract.connect(add2).applyLottery({ value: 1000 })
+			deployedContract.connect(add2).applyLottery(101, { value: 1000 })
 		).to.be.revertedWith("paid balance is greater or less than lottery price");
 	});
 });

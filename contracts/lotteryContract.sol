@@ -9,7 +9,10 @@ contract lotteryContract is contractData {
 	}
 
 	modifier validateTime(uint256 _appliedtime) {
-		require(lottery[lotteryNumber].closeTime >= _appliedtime,"lottery applying time is over");
+		require(
+			lottery[lotteryNumber].closeTime >= _appliedtime,
+			"lottery applying time is over"
+		);
 		_;
 	}
 
@@ -39,6 +42,7 @@ contract lotteryContract is contractData {
 			"paid balance is greater or less than lottery price"
 		);
 		participant.push(msg.sender);
+		lotteryPool = lotteryPool + msg.value;
 	}
 
 	function getContractBalance() public view returns (uint256) {

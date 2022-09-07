@@ -5,6 +5,7 @@ contract contractData {
 	address public owner;
 	uint256 lotteryNumber;
 	address[] participant;
+	uint256 public lotteryPool;
 	struct lotteryInfo {
 		uint256 lotteryPrice;
 		uint256 openTime;

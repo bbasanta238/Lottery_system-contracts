@@ -2,7 +2,7 @@ const { expect } = require("chai");
 const { deployContract } = require("ethereum-waffle");
 const { ethers } = require("hardhat");
 
-describe("Lottery issuer", () => {
+describe("Lottery time validation for applying and closing", () => {
 	beforeEach(async () => {
 		[add1, add2] = await ethers.getSigners();
 		contract = await ethers.getContractFactory("lotteryContract");

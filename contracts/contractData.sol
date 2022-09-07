@@ -4,6 +4,7 @@ pragma solidity ^0.8.9;
 contract contractData {
 	address public owner;
 	uint256 lotteryNumber;
+	address[] participant;
 	struct lotteryInfo {
 		uint256 lotteryPrice;
 		uint256 openTime;

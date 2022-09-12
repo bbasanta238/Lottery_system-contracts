@@ -11,7 +11,9 @@ contract contractData {
 		uint256 openTime;
 		uint256 closeTime;
 		bool isOpen;
+		bool isWinnerSelected;
 	}
 
 	mapping(uint256 => lotteryInfo) lottery;
+	mapping(address => bool) applied;
 }

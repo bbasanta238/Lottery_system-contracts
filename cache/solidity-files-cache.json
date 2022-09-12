@@ -1,10 +1,86 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "E:\\solidityProjects\\Lottery_system-contracts\\contracts\\contractData.sol": {
-      "lastModificationDate": 1662542333510,
-      "contentHash": "1198589d7a2e93ded487d049672a52ef",
-      "sourceName": "contracts/contractData.sol",
+    "E:\\solidityProjects\\Lottery_system-contracts\\contracts\\lotteryContract.sol": {
+      "lastModificationDate": 1662803629745,
+      "contentHash": "26fe1ba440481d920d82dfd083da6600",
+      "sourceName": "contracts/lotteryContract.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./lotteryWinner.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "lotteryContract"
+      ]
+    },
+    "E:\\solidityProjects\\Lottery_system-contracts\\contracts\\lotteryWinner.sol": {
+      "lastModificationDate": 1662802645352,
+      "contentHash": "92bcd28e5a28e5dc7f6b3fa2996328c8",
+      "sourceName": "contracts/lotteryWinner.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./lib/contractData.sol",
+        "./lib/events.sol",
+        "./lib/Modifiers.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "lotteryWinner"
+      ]
+    },
+    "E:\\solidityProjects\\Lottery_system-contracts\\contracts\\lib\\contractData.sol": {
+      "lastModificationDate": 1662800723029,
+      "contentHash": "36255550930dc2e6bbd15fe6be033d3f",
+      "sourceName": "contracts/lib/contractData.sol",
       "solcConfig": {
         "version": "0.8.9",
         "settings": {
@@ -36,10 +112,45 @@
         "contractData"
       ]
     },
-    "E:\\solidityProjects\\Lottery_system-contracts\\contracts\\lotteryContract.sol": {
-      "lastModificationDate": 1662541787422,
-      "contentHash": "ffbf975cd355cd542e95af6b8c013141",
-      "sourceName": "contracts/lotteryContract.sol",
+    "E:\\solidityProjects\\Lottery_system-contracts\\contracts\\lib\\events.sol": {
+      "lastModificationDate": 1662800726271,
+      "contentHash": "45a30b812211b10d9c1c442f3859d036",
+      "sourceName": "contracts/lib/events.sol",
+      "solcConfig": {
+        "version": "0.8.9",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "events"
+      ]
+    },
+    "E:\\solidityProjects\\Lottery_system-contracts\\contracts\\lib\\Modifiers.sol": {
+      "lastModificationDate": 1662803665594,
+      "contentHash": "b20e39da02cd036c951f99167d16e4c3",
+      "sourceName": "contracts/lib/Modifiers.sol",
       "solcConfig": {
         "version": "0.8.9",
         "settings": {
@@ -70,44 +181,7 @@
         "^0.8.9"
       ],
       "artifacts": [
-        "lotteryContract"
-      ]
-    },
-    "E:\\solidityProjects\\Lottery_system-contracts\\contracts\\lotteryWinner.sol": {
-      "lastModificationDate": 1662546051235,
-      "contentHash": "b9cb0f8264a8fb8b2b2f3e6ae84ce1b2",
-      "sourceName": "contracts/lotteryWinner.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./lotteryContract.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "lotteryWinner"
+        "Modifiers"
       ]
     }
   }

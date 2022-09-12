@@ -1,5 +1,4 @@
 const { expect } = require("chai");
-const { deployContract } = require("ethereum-waffle");
 const { ethers } = require("hardhat");
 
 describe("Lottery time validation for applying and closing", () => {
@@ -9,8 +8,8 @@ describe("Lottery time validation for applying and closing", () => {
 		deployedContract = await contract.deploy();
 		let currentTime = new Date(2022, 08, 07, 12, 40).getTime();
 		let closeTime = new Date(2022, 08, 07, 12, 42).getTime(); //(year,month,day,hour,min) Note: currentmonth-1 gives current month (2022,september,7)
-		console.log(currentTime);
-		console.log(closeTime);
+		// console.log(currentTime);
+		// console.log(closeTime);
 		await deployedContract
 			.connect(add1)
 			.openLottery(1, 999, currentTime, closeTime);

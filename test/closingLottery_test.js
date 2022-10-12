@@ -11,10 +11,10 @@ describe("Lottery closing", () => {
 		await deployedContract.connect(add3).applyLottery(101, { value: 999 });
 		await deployedContract.connect(add4).applyLottery(101, { value: 999 });
 		// console.log(await deployedContract.connect(add1).getLotteryInfo());
-		// console.log(
-		// 	"before closing : ",
-		// 	await deployedContract.connect(add1).getLotteryParticipants()
-		// );
+		console.log(
+			"before closing : ",
+			await deployedContract.connect(add1).getLotteryParticipants()
+		);
 	});
 	it("should clear arryas of participant after closing", async () => {
 		await deployedContract.connect(add1).selectWinner(106);

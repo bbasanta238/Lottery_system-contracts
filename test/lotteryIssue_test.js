@@ -9,6 +9,6 @@ describe("Lottery issuer", () => {
 	});
 	it("should issue a lottery", async () => {
 		await deployedContract.connect(add1).openLottery(1, 2, 100, 105);
-		// console.log(await deployedContract.connect(add1).getLotteryInfo(1));
+		console.log(await deployedContract.connect(add1).getLotteryInfo(2));
 	});
 });

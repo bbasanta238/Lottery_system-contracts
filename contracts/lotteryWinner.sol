@@ -41,6 +41,7 @@ contract lotteryWinner is contractData, events, Modifiers {
         (bool sentToManager, ) = payable(owner).call{value: prize[0]}("");
         require(sentToManager, "couldnot transfer amount to manager");
         lottery[lotteryNumber].isWinnerSelected = true;
+        lottery[lotteryNumber].isOpen = false;
         emit transferredToWinner(winner, prize[1]);
         emit transferredToManager(owner, prize[0]);
         delete lotteryPool;

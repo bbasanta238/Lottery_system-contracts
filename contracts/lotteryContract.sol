@@ -40,6 +40,7 @@ contract lotteryContract is lotteryWinner {
         participant.push(msg.sender);
         applied[msg.sender] = true;
         lotteryPool = lotteryPool + msg.value;
+        emit lotteryApplyEvent(_appliedTime);
     }
 
     //method to get contract balance
@@ -65,7 +66,6 @@ contract lotteryContract is lotteryWinner {
 
     // method to get current lottery participants
     function getLotteryParticipants() public view returns (address[] memory) {
-        require(msg.sender == owner);
         address[] memory participantData = new address[](participant.length);
         for (uint256 i = 0; i < participant.length; i++) {
             participantData[i] = participant[i];
@@ -80,7 +80,6 @@ contract lotteryContract is lotteryWinner {
         isWinnerSelected
     {
         require(msg.sender == owner);
-        // require(lottery[lotteryNumber].isWinnerSelected == true);
         lottery[lotteryNumber].isOpen = false;
         for (uint256 i = 0; i < participant.length; i++) {
             delete applied[participant[i]];

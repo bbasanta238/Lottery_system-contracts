@@ -1,8 +1,8 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
-import "./contractData.sol";
+import "./ContractData.sol";
 
-contract Modifiers is contractData {
+contract Modifiers is ContractData {
 	modifier validateTimeForUser(uint256 _appliedtime) {
 		require(
 			lottery[lotteryNumber].closeTime >= _appliedtime,
@@ -10,6 +10,7 @@ contract Modifiers is contractData {
 		);
 		_;
 	}
+
 	modifier validateTimeForManager(uint256 _invokedTime) {
 		require(
 			lottery[lotteryNumber].closeTime < _invokedTime,
@@ -17,10 +18,12 @@ contract Modifiers is contractData {
 		);
 		_;
 	}
+
 	modifier isAlreadyApplied() {
 		require(applied[msg.sender] == false, "You have already apply for Lottery");
 		_;
 	}
+
 	modifier isPreviousLotteryClosed() {
 		require(
 			lottery[lotteryNumber].isOpen == false,
@@ -28,6 +31,7 @@ contract Modifiers is contractData {
 		);
 		_;
 	}
+	
 	modifier checkAmount(uint256 _amount) {
 		if (lotteryPool > 0) {
 			require(

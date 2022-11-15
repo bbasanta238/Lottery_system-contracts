@@ -2,5 +2,10 @@ node_modules
 .husky
 
 
+
 # artifacts
 artifacts
+cache
+node_modules
+.env
+.gitignore

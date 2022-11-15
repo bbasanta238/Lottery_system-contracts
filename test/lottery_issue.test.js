@@ -7,6 +7,7 @@ describe("Lottery issuer", () => {
     contract = await ethers.getContractFactory("LotteryContract");
     deployedContract = await contract.deploy();
   });
+
   it("should issue a lottery", async () => {
     await deployedContract.connect(add1).openLottery(1, 2, 100, 105);
     console.log(await deployedContract.connect(add1).getLotteryInfo(2));

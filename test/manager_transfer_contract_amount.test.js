@@ -10,15 +10,13 @@ describe("Transferring amount to certain address by manger using contract amount
     await deployedContract.connect(add2).applyLottery(101, { value: 700 });
     await deployedContract.connect(add3).applyLottery(101, { value: 700 });
     await deployedContract.connect(add4).applyLottery(101, { value: 700 });
-
-    // console.log(await add5.getAddress());
     console.log(
       "add5 balance before transfering from contract : ",
       await add5.getBalance()
     );
   });
+
   it("should transfer amount to the given address", async () => {
-    // console.log(await deployedContract.connect(add1).getLotteryInfo(1));
     await deployedContract.connect(add1).selectWinner(106);
     await deployedContract
       .connect(add1)
@@ -30,7 +28,6 @@ describe("Transferring amount to certain address by manger using contract amount
   });
 
   it("should revert the transaction if the amount is greater than the amount available in contract", async () => {
-    // console.log(await deployedContract.connect(add1).getLotteryInfo(1));
     await deployedContract.connect(add1).selectWinner(106);
     await expect(
       deployedContract
